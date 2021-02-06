@@ -8,10 +8,13 @@ namespace console_timer
         public static void Timer(Config cfg)
         {
             Console.CursorVisible = false;
-            
-            if(cfg.Delay > 0)
+
+            if (cfg.Delay > 0)
+            {
+                Console.WriteLine("Waiting {0}s to start...", cfg.Delay);
                 Thread.Sleep(cfg.Delay * 1000);
-            
+            }
+
             int timers = cfg.Timers.Length;
             
             DateTime now = DateTime.Now;
